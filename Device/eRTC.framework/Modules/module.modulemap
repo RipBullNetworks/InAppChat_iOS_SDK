@@ -1,0 +1,6 @@
+framework module eRTC {
+  umbrella header "eRTC.h"
+
+  export *
+  module * { export * }
+}
