@@ -9,11 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "ERTCConfig.h"
 
-typedef enum {
-       QA=1,
-       Staging,
-       Production
-   } ENVIRONMENT;
+
+
 typedef void (^blockSuccess)(BOOL isValid, NSString *errMsg);
 typedef void (^blockFailure)(NSError *error);
 
@@ -26,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithApiKey:(NSString *) apiKey;
 - (instancetype)initWithApiKey:(NSString *) apiKey environment:(ENVIRONMENT)environment;
 
--(instancetype)initWithConfig:(ERTCConfig*)config withSuccess:(blockSuccess)success andFailure:(blockFailure)failure;
+-(instancetype)initWithConfig:(ERTCConfig *)config withSuccess:(blockSuccess)success andFailure:(blockFailure)failure;
 
 
 +(void)validateNameSpaceWithWorkSpaceName:(NSString *)workSpaceName withSuccess:(blockSuccess)success andFailure:(blockFailure)failure;

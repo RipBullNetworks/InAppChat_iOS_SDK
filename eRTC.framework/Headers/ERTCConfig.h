@@ -7,12 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-
-NS_ASSUME_NONNULL_BEGIN
+typedef enum {
+       QA=1,
+       Staging,
+       Production
+   } ENVIRONMENT;
 
 @interface ERTCConfig : NSObject
 @property (strong, nonatomic) NSString *nameSpace;
 @property (strong, nonatomic) NSString *apiKey;
+@property (assign, nonatomic) ENVIRONMENT environment;
+
 @end
 
-NS_ASSUME_NONNULL_END
